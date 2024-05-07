@@ -1,0 +1,27 @@
+﻿@page "/BlazorTest"
+@rendermode InteractiveServer
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<input id="input1" class="form-control" @bind="input1"/>
+<button class="btn btn-primary" @onclick="Save">Save</button>
+<label class="form-label">@stringInput</label>
+
+@code {
+    private string input1;
+    int currentCount = 0;
+    string stringInput = "";
+
+    void IncrementCount()
+    {
+        currentCount++;
+    }
+    void Save()
+    {
+        stringInput = input1.ToString();
+    }
+}
