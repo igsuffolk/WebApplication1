@@ -1,5 +1,6 @@
 ﻿@page
-@using WebApplication1.Components.Pages
+﻿@using System.Security.Claims;
+@using RazorWithBlazor.Components.Pages
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,8 +9,9 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
 </div>
-<component type="typeof(BlazorTest)" render-mode="Server" />
+<component type="typeof(BlazorTest)" render-mode="ServerPrerendered" />
 
 
 

@@ -1,4 +1,4 @@
-using WebApplication1.Components;
+using RazorWithBlazor.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,13 +18,17 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAntiforgery();
-app.UseAuthorization();
+
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
 app.Run();
